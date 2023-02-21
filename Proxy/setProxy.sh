@@ -16,11 +16,11 @@ set_proxy(){
     git config --global https.proxy "${PROXY_HTTP}"
 
     #sudo sed -i 's/#Acquire/Acquire/g' /etc/apt/apt.conf
-    sudo echo "Acquire::http::Proxy \"$PROXY_HTTP\";" > /etc/apt/apt.conf
-    if [ ${wslip} == "192.168.x.y" ]
-    then
-        sudo sed -i 's/192.168.x.1/192.168.x.z/g' /etc/apt/apt.conf
-    fi
+    #sudo echo "Acquire::http::Proxy \"$PROXY_HTTP\";" > /etc/apt/apt.conf
+    #if [ ${wslip} == "192.168.x.y" ]
+    #then
+    #    sudo sed -i 's/192.168.x.1/192.168.x.z/g' /etc/apt/apt.conf
+    #fi
 }
 
 unset_proxy(){
@@ -34,11 +34,11 @@ unset_proxy(){
     git config --global --unset https.proxy
 
     #sudo sed -i 's/Acquire/#Acquire/g' /etc/apt/apt.conf
-    sudo echo "#Acquire::http::Proxy \"$PROXY_HTTP\";" > /etc/apt/apt.conf
-    if [ ${wslip} == "192.168.x.y" ]
-    then
-        sudo sed -i 's/192.168.x.1/192.168.x.z/g' /etc/apt/apt.conf
-    fi
+    #sudo echo "#Acquire::http::Proxy \"$PROXY_HTTP\";" > /etc/apt/apt.conf
+    #if [ ${wslip} == "192.168.x.y" ]
+    #then
+    #    sudo sed -i 's/192.168.x.1/192.168.x.z/g' /etc/apt/apt.conf
+    #fi
 }
 
 test_setting(){
